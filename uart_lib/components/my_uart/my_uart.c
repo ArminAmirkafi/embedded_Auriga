@@ -13,5 +13,15 @@ uart_setup(void *setup_ptr){
     if(uart_setup_p->do_you_need_event_handling){
         queue=
     }
+}
 
+void uart_printf(uart_port_t uart_num , const char *format , ...) {
+    char buffer[128];
+    va_list args;
+
+    va_start(args , format);
+    vsprintf(buffer , format , args);
+    va_end(args);
+
+    uart_write_bytes(uart_num , buffer , strlen(buffer));
 }
