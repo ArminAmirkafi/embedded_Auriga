@@ -1,5 +1,6 @@
 idf_component_register(
-    SRCS "my_uart.c"
+    SRCS "rotary_encoder.c"
     INCLUDE_DIRS "include"
     REQUIRES driver
+
 )
